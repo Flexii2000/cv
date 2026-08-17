@@ -57,11 +57,37 @@
     padding: 0 1.5rem 5rem;
   }
 
+  /* Back link */
+  .back-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+    z-index: 10;
+  }
+  .back-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(-2px);
+  }
+
   /* Topbar */
   .topbar {
     max-width: 720px;
     margin: 0 auto;
-    padding: 1.5rem 1.5rem 0;
+    padding: 1.5rem 1.5rem 0 4.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -273,11 +299,13 @@
 
   @media print {
     body { background: #fff; }
-    .lang-toggle, .topbar { display: none; }
+    .lang-toggle, .topbar, .back-link { display: none; }
   }
 </style>
 </head>
 <body>
+
+<a class="back-link" href="https://fherrmann.com" aria-label="Zurück zu fherrmann.com">&larr;</a>
 
 <div class="topbar">
   <span class="brand">felix-herrmann/cv</span>
@@ -292,7 +320,7 @@
   <header class="hero">
     <h1>Felix Herrmann</h1>
     <p class="role" data-i18n="role">Software Engineer · Dual Student at OTTO</p>
-    <p class="intro" data-i18n="intro">Final-year software engineering student at OTTO, aiming to convert to a full-time role. I build and self-host web projects end to end — from code to infrastructure.</p>
+    <p class="intro" data-i18n="intro">Final-year software engineering student at OTTO.</p>
     <div class="tech-row">
       <span>Java</span><span>Rust</span><span>SQL</span><span>Bash</span><span>Docker</span>
     </div>
@@ -311,7 +339,7 @@
       <div class="what">
         <p class="org">OTTO GmbH &amp; Co KG, Hamburg <span class="badge" data-i18n="badge.current">current</span></p>
         <p class="title" data-i18n="exp1.title">Dual Student, Software Engineering</p>
-        <p class="note" data-i18n="exp1.note">Final year — aiming for full-time conversion as Software Engineer</p>
+        <p class="note" data-i18n="exp1.note">Aiming for a full-time role</p>
       </div>
     </div>
 
@@ -404,7 +432,7 @@
     "meta.title": "Felix Herrmann — Lebenslauf",
     "meta.desc": "Felix Herrmann, Software Engineer und dualer Student bei der OTTO GmbH & Co KG, Hamburg.",
     "role": "Software Engineer · Dualer Student bei OTTO",
-    "intro": "Software Engineer im letzten Lehrjahr des dualen Studiums bei OTTO, mit dem Ziel der Übernahme. Ich baue und hoste eigene Web-Projekte komplett selbst — von Code bis Infrastruktur.",
+    "intro": "Software Engineer im letzten Lehrjahr des dualen Studiums bei OTTO.",
     "present": "heute",
     "label.experience": "// Werdegang",
     "label.education": "// Bildung",
@@ -413,7 +441,7 @@
     "label.interests": "// Interessen",
     "badge.current": "aktuell",
     "exp1.title": "Dualer Student, Software Engineering",
-    "exp1.note": "Letztes Lehrjahr — Ziel: Übernahme als Software Engineer",
+    "exp1.note": "Ziel: Vollzeitstelle",
     "exp2.title": "Werkstudent, Callcenter Agent",
     "edu1.title": "B.Sc. Wirtschaftsinformatik, duales Studium",
     "edu1.note": "Note: 1,3",
