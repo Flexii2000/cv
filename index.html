@@ -294,7 +294,7 @@
     <p class="role" data-i18n="role">Software Engineer · Dual Student at OTTO</p>
     <p class="intro" data-i18n="intro">Final-year software engineering student at OTTO, aiming to convert to a full-time role. I build and self-host web projects end to end — from code to infrastructure.</p>
     <div class="tech-row">
-      <span>Java</span><span>Rust</span><span>SQL</span><span>Docker</span>
+      <span>Java</span><span>Rust</span><span>SQL</span><span>Bash</span><span>Docker</span>
     </div>
     <div class="contact-row">
       <a href="mailto:herrmann.felix@aol.com">herrmann.felix@aol.com</a>
@@ -320,14 +320,6 @@
       <div class="what">
         <p class="org">Acer Computer GmbH, Ahrensburg</p>
         <p class="title" data-i18n="exp2.title">Working Student, Call Center Agent</p>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="when">2018</div>
-      <div class="what">
-        <p class="org">Claus Nitsche &amp; Sohn GmbH, Hamburg</p>
-        <p class="title" data-i18n="exp3.title">Business Internship</p>
       </div>
     </div>
   </section>
@@ -358,7 +350,7 @@
       <div class="what">
         <p class="org">Gymnasium Stormarnschule Ahrensburg</p>
         <p class="title" data-i18n="edu3.title">Abitur (German university entrance qualification)</p>
-        <p class="note" data-i18n="edu3.note">Physics focus · Advanced courses: Physics, Math, German, English</p>
+        <p class="note" data-i18n="edu3.note">Physics focus · Advanced courses: Physics, Math, German, English · GPA: 1.8</p>
       </div>
     </div>
   </section>
@@ -369,6 +361,7 @@
       <span class="pill pill-green">Java</span>
       <span class="pill pill-green">Rust</span>
       <span class="pill pill-yellow">SQL</span>
+      <span class="pill pill-green">Bash</span>
       <span class="pill pill-yellow">Docker</span>
       <span class="pill pill-yellow">nginx</span>
       <span class="pill pill-green">Linux</span>
@@ -385,45 +378,15 @@
         <ul class="plain">
           <li>German <span class="level" data-i18n="lang.de.level">native</span></li>
           <li>English <span class="level" data-i18n="lang.en.level">fluent</span></li>
-          <li>Latin <span class="level" data-i18n="lang.la.level">basic (Latinum)</span></li>
         </ul>
       </div>
       <div>
         <h2 data-i18n="label.interests">// Interests</h2>
         <ul class="plain">
-          <li data-i18n="int.handball">Handball</li>
           <li data-i18n="int.kite">Kitesurfing</li>
           <li data-i18n="int.padel">Padel</li>
           <li data-i18n="int.dance">Ballroom dancing</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="volunteering">
-    <h2 data-i18n="label.volunteering">// Volunteering</h2>
-
-    <div class="entry">
-      <div class="when">2018 — 2024</div>
-      <div class="what">
-        <p class="org" data-i18n="vol1.org">Football Referee</p>
-        <p class="title">Kreis Hamburg-Walddörfer</p>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="when">2016 — 2019</div>
-      <div class="what">
-        <p class="org" data-i18n="vol2.org">Network Team, Stormarnschule Ahrensburg</p>
-        <p class="title" data-i18n="vol2.title">Server administration &amp; school intranet (IServ)</p>
-      </div>
-    </div>
-
-    <div class="entry">
-      <div class="when">2021</div>
-      <div class="what">
-        <p class="org" data-i18n="vol3.org">Deputy Election Officer</p>
-        <p class="title" data-i18n="vol3.title">Federal election (Bundestagswahl)</p>
       </div>
     </div>
   </section>
@@ -448,30 +411,21 @@
     "label.skills": "// Kenntnisse",
     "label.languages": "// Sprachen",
     "label.interests": "// Interessen",
-    "label.volunteering": "// Ehrenamt",
     "badge.current": "aktuell",
     "exp1.title": "Dualer Student, Software Engineering",
     "exp1.note": "Letztes Lehrjahr — Ziel: Übernahme als Software Engineer",
     "exp2.title": "Werkstudent, Callcenter Agent",
-    "exp3.title": "Wirtschaftspraktikum",
     "edu1.title": "B.Sc. Wirtschaftsinformatik, duales Studium",
     "edu1.note": "Note: 1,3",
     "edu2.title": "B.Sc. Psychologie",
     "edu2.note": "Wissenschaftlich-methodischer Schwerpunkt · Note: 1,8",
     "edu3.title": "Abitur",
-    "edu3.note": "Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch",
+    "edu3.note": "Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch · Note: 1,8",
     "lang.de.level": "Muttersprache",
     "lang.en.level": "fließend",
-    "lang.la.level": "kleines Latinum",
-    "int.handball": "Handball",
     "int.kite": "Kitesurfen",
     "int.padel": "Padel",
-    "int.dance": "Paartanz",
-    "vol1.org": "Fußballschiedsrichter",
-    "vol2.org": "Netzwerkteam, Stormarnschule Ahrensburg",
-    "vol2.title": "Serveradministration & Betreuung des schulischen Intranets (IServ)",
-    "vol3.org": "Stellvertretender Wahlvorstand",
-    "vol3.title": "Bundestagswahl"
+    "int.dance": "Paartanz"
   };
 
   const els = document.querySelectorAll('[data-i18n]');
