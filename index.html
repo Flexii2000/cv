@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felix Herrmann — Lebenslauf</title>
-<meta name="description" content="Lebenslauf von Felix Herrmann, dualer Student Wirtschaftsinformatik (Schwerpunkt Software Engineering) bei der OTTO GmbH & Co KG.">
+<title data-i18n="meta.title">Felix Herrmann — Software Engineer</title>
+<meta name="description" data-i18n="meta.desc" content="Felix Herrmann, software engineer and dual student at OTTO GmbH &amp; Co KG, Hamburg.">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="data:,">
 <style>
@@ -14,57 +14,131 @@
     --card-bg: #ffffff;
     --text: #1d1d1f;
     --muted: #6e6e73;
-    --border: #e5e5e7;
+    --faint: #9a9a9e;
+    --border: #e2e2e5;
     --accent: #0071e3;
-    --accent-soft: rgba(0, 113, 227, 0.1);
+    --accent-soft: rgba(0, 113, 227, 0.09);
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d0d0f;
-      --card-bg: #1c1c1e;
-      --text: #f5f5f7;
-      --muted: #9a9a9e;
-      --border: #2e2e30;
-      --accent: #4da3ff;
-      --accent-soft: rgba(77, 163, 255, 0.12);
+      --bg: #0a0a0c;
+      --card-bg: #131316;
+      --text: #f2f2f4;
+      --muted: #9d9da3;
+      --faint: #6b6b70;
+      --border: #232327;
+      --accent: #5ac8fa;
+      --accent-soft: rgba(90, 200, 250, 0.09);
     }
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
   }
   .wrap {
-    max-width: 760px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 4rem 1.5rem 5rem;
+    padding: 0 1.5rem 5rem;
+  }
+
+  /* Topbar */
+  .topbar {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--faint);
+  }
+  .lang-toggle {
+    display: inline-flex;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+  }
+  .lang-toggle button {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: 0.02em;
+  }
+  .lang-toggle button.active {
+    background: var(--accent);
+    color: #fff;
   }
 
   /* Hero */
   header.hero {
-    margin-bottom: 3rem;
+    padding-top: 2.5rem;
+    margin-bottom: 3.5rem;
   }
-  .eyebrow {
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin: 0 0 0.6rem;
+  .prompt {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--faint);
+    margin: 0 0 1rem;
   }
+  .prompt .cursor {
+    display: inline-block;
+    width: 0.5em;
+    background: var(--accent);
+    margin-left: 2px;
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
   h1 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     font-weight: 700;
-    margin: 0 0 0.5rem;
-    letter-spacing: -0.02em;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.03em;
   }
   .role {
-    font-size: 1.15rem;
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin: 0 0 1.1rem;
+  }
+  .intro {
     color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 54ch;
     margin: 0 0 1.5rem;
+  }
+  .tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tech-row span {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid transparent;
   }
   .contact-row {
     display: flex;
@@ -86,55 +160,56 @@
   }
 
   /* Sections */
-  section {
-    margin-bottom: 2.75rem;
-  }
+  section { margin-bottom: 3rem; }
   h2 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 1.2rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--faint);
+    margin: 0 0 1.3rem;
+  }
+  h2::before {
+    content: "";
   }
 
   /* Timeline entries */
   .entry {
     display: grid;
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 128px 1fr;
     gap: 0.25rem 1.25rem;
-    padding: 1rem 0;
+    padding: 1.1rem 0;
+    position: relative;
   }
-  .entry + .entry {
-    border-top: 1px solid var(--border);
-  }
+  .entry + .entry { border-top: 1px solid var(--border); }
   .entry .when {
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding-top: 0.15rem;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--faint);
+    padding-top: 0.2rem;
   }
   .entry .what .org {
     font-weight: 600;
-    margin: 0 0 0.15rem;
+    margin: 0 0 0.2rem;
+    font-size: 0.98rem;
   }
   .entry .what .title {
-    color: var(--text);
+    color: var(--muted);
     margin: 0 0 0.3rem;
+    font-size: 0.92rem;
   }
   .entry .what .note {
-    color: var(--muted);
-    font-size: 0.9rem;
+    color: var(--faint);
+    font-size: 0.85rem;
     margin: 0;
   }
   .badge {
     display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 500;
     color: var(--accent);
     background: var(--accent-soft);
-    padding: 0.15rem 0.55rem;
+    padding: 0.12rem 0.5rem;
     border-radius: 999px;
     margin-left: 0.5rem;
     vertical-align: middle;
@@ -145,36 +220,28 @@
   }
 
   /* Skills */
-  .skill-groups {
-    display: grid;
-    gap: 1.25rem;
-  }
-  .skill-group .label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0 0 0.6rem;
-  }
   .pills {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.55rem;
   }
   .pill {
+    font-family: var(--mono);
     font-size: 0.82rem;
-    padding: 0.35rem 0.75rem;
-    border-radius: 999px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
     background: var(--card-bg);
     border: 1px solid var(--border);
   }
 
-  /* Grid sections (Sprachen / Interessen) */
+  /* Grid sections (languages / interests) */
   .two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   @media (max-width: 560px) {
-    .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+    .two-col { grid-template-columns: 1fr; gap: 3rem; }
   }
   ul.plain {
     list-style: none;
@@ -184,40 +251,48 @@
   ul.plain li {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
+    padding: 0.55rem 0;
     border-top: 1px solid var(--border);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
   }
-  ul.plain li:first-child {
-    border-top: none;
-  }
-  ul.plain li span.level {
-    color: var(--muted);
-  }
+  ul.plain li:first-child { border-top: none; }
+  ul.plain li span.level { color: var(--faint); font-family: var(--mono); font-size: 0.8rem; }
 
   footer {
     text-align: center;
-    color: var(--muted);
-    font-size: 0.8rem;
-    margin-top: 3rem;
+    color: var(--faint);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    margin-top: 4rem;
   }
-  footer a {
-    color: var(--muted);
-  }
+  footer a { color: var(--faint); }
 
   @media print {
     body { background: #fff; }
-    .contact-row a { border-color: #ccc; }
+    .lang-toggle, .topbar { display: none; }
   }
 </style>
 </head>
 <body>
+
+<div class="topbar">
+  <span class="brand">felix-herrmann/cv</span>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" class="active">EN</button>
+    <button type="button" data-lang="de">DE</button>
+  </div>
+</div>
+
 <div class="wrap">
 
   <header class="hero">
-    <p class="eyebrow">Lebenslauf</p>
+    <p class="prompt">felix@herrmann:~$ whoami<span class="cursor">&nbsp;</span></p>
     <h1>Felix Herrmann</h1>
-    <p class="role">Dualer Student Wirtschaftsinformatik (Software Engineering) bei OTTO — auf dem Weg zum Software Engineer</p>
+    <p class="role" data-i18n="role">Software Engineer · Dual Student at OTTO</p>
+    <p class="intro" data-i18n="intro">Final-year software engineering student at OTTO, aiming to convert to a full-time role. I build and self-host web projects end to end — from code to infrastructure.</p>
+    <div class="tech-row">
+      <span>Java</span><span>Rust</span><span>SQL</span><span>Docker</span>
+    </div>
     <div class="contact-row">
       <a href="mailto:herrmann.felix@aol.com">herrmann.felix@aol.com</a>
       <span>Hamburg</span>
@@ -225,139 +300,125 @@
     </div>
   </header>
 
-  <section id="profil">
-    <h2>Profil</h2>
-    <p style="margin:0; color: var(--text);">
-      Ich bin im letzten Lehrjahr meines dualen Studiums Wirtschaftsinformatik mit
-      Schwerpunkt Software Engineering bei der OTTO GmbH &amp; Co KG und strebe dort
-      den Einstieg als Software Engineer an. Aktueller Notendurchschnitt an der
-      Nordakademie: 1,3. Neben dem Studium baue und betreibe ich eigene Web-Projekte
-      und Server-Infrastruktur — von kleinen Tools bis zu selbst gehosteten Diensten.
-    </p>
-  </section>
-
-  <section id="werdegang">
-    <h2>Beruflicher Werdegang</h2>
+  <section id="experience">
+    <h2 data-i18n="label.experience">// Experience</h2>
 
     <div class="entry">
-      <div class="when">seit 08/2023</div>
+      <div class="when">2023 — <span data-i18n="present">present</span></div>
       <div class="what">
-        <p class="org">OTTO GmbH &amp; Co KG, Hamburg <span class="badge">aktuell</span></p>
-        <p class="title">Dualer Student Wirtschaftsinformatik — Schwerpunkt Software Engineering</p>
-        <p class="note">Letztes Lehrjahr, Ziel: Übernahme als Software Engineer</p>
+        <p class="org">OTTO GmbH &amp; Co KG, Hamburg <span class="badge" data-i18n="badge.current">current</span></p>
+        <p class="title" data-i18n="exp1.title">Dual Student, Software Engineering</p>
+        <p class="note" data-i18n="exp1.note">Final year — aiming for full-time conversion as Software Engineer</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">07/2020 – 04/2021</div>
+      <div class="when">2020 — 2021</div>
       <div class="what">
         <p class="org">Acer Computer GmbH, Ahrensburg</p>
-        <p class="title">Werkstudent, Callcenter Agent</p>
+        <p class="title" data-i18n="exp2.title">Working Student, Call Center Agent</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">01/2018 – 02/2018</div>
+      <div class="when">2018</div>
       <div class="what">
         <p class="org">Claus Nitsche &amp; Sohn GmbH, Hamburg</p>
-        <p class="title">Wirtschaftspraktikum als Kaufmann</p>
+        <p class="title" data-i18n="exp3.title">Business Internship</p>
       </div>
     </div>
   </section>
 
-  <section id="bildung">
-    <h2>Bildungsweg</h2>
+  <section id="education">
+    <h2 data-i18n="label.education">// Education</h2>
 
     <div class="entry">
-      <div class="when">seit 10/2023</div>
+      <div class="when">2023 — <span data-i18n="present">present</span></div>
       <div class="what">
         <p class="org">Nordakademie — Hochschule der Wirtschaft</p>
-        <p class="title">B.Sc. Wirtschaftsinformatik, duales Studium</p>
-        <p class="note">Aktueller Notendurchschnitt: 1,3</p>
+        <p class="title" data-i18n="edu1.title">B.Sc. Business Informatics, dual program</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">10/2020 – 09/2023</div>
+      <div class="when">2020 — 2023</div>
       <div class="what">
         <p class="org">MSH Medical School Hamburg</p>
-        <p class="title">B.Sc. Psychologie (Note 1,8)</p>
-        <p class="note">Wissenschaftlich-methodischer Schwerpunkt</p>
+        <p class="title" data-i18n="edu2.title">B.Sc. Psychology</p>
+        <p class="note" data-i18n="edu2.note">Research methods focus</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">08/2011 – 06/2020</div>
+      <div class="when">2011 — 2020</div>
       <div class="what">
         <p class="org">Gymnasium Stormarnschule Ahrensburg</p>
-        <p class="title">Abitur (Note 1,8)</p>
-        <p class="note">Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch</p>
+        <p class="title" data-i18n="edu3.title">Abitur (German university entrance qualification)</p>
+        <p class="note" data-i18n="edu3.note">Physics focus · Advanced courses: Physics, Math, German, English</p>
       </div>
     </div>
   </section>
 
-  <section id="kenntnisse">
-    <h2>Kenntnisse</h2>
-    <div class="skill-groups">
-      <div class="skill-group">
-        <p class="label">IT</p>
-        <div class="pills">
-          <span class="pill">Java</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Docker</span>
-          <span class="pill">Rust</span>
-          <span class="pill">MS 365</span>
-          <span class="pill">IBM SPSS</span>
-        </div>
-      </div>
+  <section id="skills">
+    <h2 data-i18n="label.skills">// Skills</h2>
+    <div class="pills">
+      <span class="pill">Java</span>
+      <span class="pill">Rust</span>
+      <span class="pill">SQL</span>
+      <span class="pill">Docker</span>
+      <span class="pill">nginx</span>
+      <span class="pill">Linux</span>
+      <span class="pill">Git</span>
+      <span class="pill">MS 365</span>
+      <span class="pill">IBM SPSS</span>
     </div>
   </section>
 
-  <section id="sprachen-interessen">
+  <section id="lang-interests">
     <div class="two-col">
       <div>
-        <h2>Sprachen</h2>
+        <h2 data-i18n="label.languages">// Languages</h2>
         <ul class="plain">
-          <li>Deutsch <span class="level">Muttersprache</span></li>
-          <li>Englisch <span class="level">fließend</span></li>
-          <li>Latein <span class="level">kleines Latinum</span></li>
+          <li>German <span class="level" data-i18n="lang.de.level">native</span></li>
+          <li>English <span class="level" data-i18n="lang.en.level">fluent</span></li>
+          <li>Latin <span class="level" data-i18n="lang.la.level">basic (Latinum)</span></li>
         </ul>
       </div>
       <div>
-        <h2>Interessen</h2>
+        <h2 data-i18n="label.interests">// Interests</h2>
         <ul class="plain">
-          <li>Handball <span class="level">seit 2012</span></li>
-          <li>Kitesurfen <span class="level">seit 2014</span></li>
-          <li>Paartanz <span class="level">seit 2016</span></li>
+          <li data-i18n="int.handball">Handball</li>
+          <li data-i18n="int.kite">Kitesurfing</li>
+          <li data-i18n="int.dance">Partner dance</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="ehrenamt">
-    <h2>Ehrenamt</h2>
+  <section id="volunteering">
+    <h2 data-i18n="label.volunteering">// Volunteering</h2>
 
     <div class="entry">
-      <div class="when">seit 08/2018</div>
+      <div class="when">2018 — <span data-i18n="present">present</span></div>
       <div class="what">
-        <p class="org">Fußballschiedsrichter</p>
+        <p class="org" data-i18n="vol1.org">Football Referee</p>
         <p class="title">Kreis Hamburg-Walddörfer</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">08/2016 – 08/2019</div>
+      <div class="when">2016 — 2019</div>
       <div class="what">
-        <p class="org">Netzwerkteam, Stormarnschule Ahrensburg</p>
-        <p class="title">Serveradministration &amp; Betreuung des schulischen Intranets (IServ)</p>
+        <p class="org" data-i18n="vol2.org">Network Team, Stormarnschule Ahrensburg</p>
+        <p class="title" data-i18n="vol2.title">Server administration &amp; school intranet (IServ)</p>
       </div>
     </div>
 
     <div class="entry">
-      <div class="when">09/2021</div>
+      <div class="when">2021</div>
       <div class="what">
-        <p class="org">Bundestagswahl</p>
-        <p class="title">Stellvertretender Wahlvorstand</p>
+        <p class="org" data-i18n="vol3.org">Deputy Election Officer</p>
+        <p class="title" data-i18n="vol3.title">Federal election (Bundestagswahl)</p>
       </div>
     </div>
   </section>
@@ -370,6 +431,67 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  const DE = {
+    "meta.title": "Felix Herrmann — Lebenslauf",
+    "meta.desc": "Felix Herrmann, Software Engineer und dualer Student bei der OTTO GmbH & Co KG, Hamburg.",
+    "role": "Software Engineer · Dualer Student bei OTTO",
+    "intro": "Software Engineer im letzten Lehrjahr des dualen Studiums bei OTTO, mit dem Ziel der Übernahme. Ich baue und hoste eigene Web-Projekte komplett selbst — von Code bis Infrastruktur.",
+    "present": "heute",
+    "label.experience": "// Werdegang",
+    "label.education": "// Bildung",
+    "label.skills": "// Kenntnisse",
+    "label.languages": "// Sprachen",
+    "label.interests": "// Interessen",
+    "label.volunteering": "// Ehrenamt",
+    "badge.current": "aktuell",
+    "exp1.title": "Dualer Student, Software Engineering",
+    "exp1.note": "Letztes Lehrjahr — Ziel: Übernahme als Software Engineer",
+    "exp2.title": "Werkstudent, Callcenter Agent",
+    "exp3.title": "Wirtschaftspraktikum",
+    "edu1.title": "B.Sc. Wirtschaftsinformatik, duales Studium",
+    "edu2.title": "B.Sc. Psychologie",
+    "edu2.note": "Wissenschaftlich-methodischer Schwerpunkt",
+    "edu3.title": "Abitur",
+    "edu3.note": "Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch",
+    "lang.de.level": "Muttersprache",
+    "lang.en.level": "fließend",
+    "lang.la.level": "kleines Latinum",
+    "int.handball": "Handball",
+    "int.kite": "Kitesurfen",
+    "int.dance": "Paartanz",
+    "vol1.org": "Fußballschiedsrichter",
+    "vol2.org": "Netzwerkteam, Stormarnschule Ahrensburg",
+    "vol2.title": "Serveradministration & Betreuung des schulischen Intranets (IServ)",
+    "vol3.org": "Stellvertretender Wahlvorstand",
+    "vol3.title": "Bundestagswahl"
+  };
+
+  const els = document.querySelectorAll('[data-i18n]');
+  const EN = {};
+  els.forEach(el => { EN[el.dataset.i18n] = el.getAttribute('content') || el.textContent; });
+
+  function applyLang(lang) {
+    const dict = lang === 'de' ? DE : EN;
+    els.forEach(el => {
+      const key = el.dataset.i18n;
+      if (!(key in dict)) return;
+      if (el.tagName === 'META') el.setAttribute('content', dict[key]);
+      else if (el.tagName === 'TITLE') el.textContent = dict[key];
+      else el.textContent = dict[key];
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    localStorage.setItem('cv-lang', lang);
+  }
+
+  document.querySelectorAll('.lang-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  applyLang(localStorage.getItem('cv-lang') || 'en');
 </script>
 </body>
 </html>
