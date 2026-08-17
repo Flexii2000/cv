@@ -18,6 +18,10 @@
     --border: #e2e2e5;
     --accent: #0071e3;
     --accent-soft: rgba(0, 113, 227, 0.09);
+    --green: #1a7f37;
+    --green-soft: rgba(26, 127, 55, 0.09);
+    --yellow: #9a6700;
+    --yellow-soft: rgba(154, 103, 0, 0.1);
     --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", Menlo, Consolas, monospace;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
@@ -31,6 +35,10 @@
       --border: #232327;
       --accent: #5ac8fa;
       --accent-soft: rgba(90, 200, 250, 0.09);
+      --green: #4ade80;
+      --green-soft: rgba(74, 222, 128, 0.1);
+      --yellow: #fbbf24;
+      --yellow-soft: rgba(251, 191, 36, 0.1);
     }
   }
   * { box-sizing: border-box; }
@@ -93,20 +101,6 @@
     padding-top: 2.5rem;
     margin-bottom: 3.5rem;
   }
-  .prompt {
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--faint);
-    margin: 0 0 1rem;
-  }
-  .prompt .cursor {
-    display: inline-block;
-    width: 0.5em;
-    background: var(--accent);
-    margin-left: 2px;
-    animation: blink 1.1s steps(1) infinite;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
   h1 {
     font-size: 2.6rem;
     font-weight: 700;
@@ -233,6 +227,16 @@
     background: var(--card-bg);
     border: 1px solid var(--border);
   }
+  .pill-green {
+    color: var(--green);
+    background: var(--green-soft);
+    border-color: transparent;
+  }
+  .pill-yellow {
+    color: var(--yellow);
+    background: var(--yellow-soft);
+    border-color: transparent;
+  }
 
   /* Grid sections (languages / interests) */
   .two-col {
@@ -286,7 +290,6 @@
 <div class="wrap">
 
   <header class="hero">
-    <p class="prompt">felix@herrmann:~$ whoami<span class="cursor">&nbsp;</span></p>
     <h1>Felix Herrmann</h1>
     <p class="role" data-i18n="role">Software Engineer · Dual Student at OTTO</p>
     <p class="intro" data-i18n="intro">Final-year software engineering student at OTTO, aiming to convert to a full-time role. I build and self-host web projects end to end — from code to infrastructure.</p>
@@ -337,6 +340,7 @@
       <div class="what">
         <p class="org">Nordakademie — Hochschule der Wirtschaft</p>
         <p class="title" data-i18n="edu1.title">B.Sc. Business Informatics, dual program</p>
+        <p class="note" data-i18n="edu1.note">GPA: 1.3</p>
       </div>
     </div>
 
@@ -345,7 +349,7 @@
       <div class="what">
         <p class="org">MSH Medical School Hamburg</p>
         <p class="title" data-i18n="edu2.title">B.Sc. Psychology</p>
-        <p class="note" data-i18n="edu2.note">Research methods focus</p>
+        <p class="note" data-i18n="edu2.note">Research methods focus · GPA: 1.8</p>
       </div>
     </div>
 
@@ -362,13 +366,13 @@
   <section id="skills">
     <h2 data-i18n="label.skills">// Skills</h2>
     <div class="pills">
-      <span class="pill">Java</span>
-      <span class="pill">Rust</span>
-      <span class="pill">SQL</span>
-      <span class="pill">Docker</span>
-      <span class="pill">nginx</span>
-      <span class="pill">Linux</span>
-      <span class="pill">Git</span>
+      <span class="pill pill-green">Java</span>
+      <span class="pill pill-green">Rust</span>
+      <span class="pill pill-yellow">SQL</span>
+      <span class="pill pill-yellow">Docker</span>
+      <span class="pill pill-yellow">nginx</span>
+      <span class="pill pill-green">Linux</span>
+      <span class="pill pill-green">Git</span>
       <span class="pill">MS 365</span>
       <span class="pill">IBM SPSS</span>
     </div>
@@ -389,7 +393,8 @@
         <ul class="plain">
           <li data-i18n="int.handball">Handball</li>
           <li data-i18n="int.kite">Kitesurfing</li>
-          <li data-i18n="int.dance">Partner dance</li>
+          <li data-i18n="int.padel">Padel</li>
+          <li data-i18n="int.dance">Ballroom dancing</li>
         </ul>
       </div>
     </div>
@@ -399,7 +404,7 @@
     <h2 data-i18n="label.volunteering">// Volunteering</h2>
 
     <div class="entry">
-      <div class="when">2018 — <span data-i18n="present">present</span></div>
+      <div class="when">2018 — 2024</div>
       <div class="what">
         <p class="org" data-i18n="vol1.org">Football Referee</p>
         <p class="title">Kreis Hamburg-Walddörfer</p>
@@ -450,8 +455,9 @@
     "exp2.title": "Werkstudent, Callcenter Agent",
     "exp3.title": "Wirtschaftspraktikum",
     "edu1.title": "B.Sc. Wirtschaftsinformatik, duales Studium",
+    "edu1.note": "Note: 1,3",
     "edu2.title": "B.Sc. Psychologie",
-    "edu2.note": "Wissenschaftlich-methodischer Schwerpunkt",
+    "edu2.note": "Wissenschaftlich-methodischer Schwerpunkt · Note: 1,8",
     "edu3.title": "Abitur",
     "edu3.note": "Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch",
     "lang.de.level": "Muttersprache",
@@ -459,6 +465,7 @@
     "lang.la.level": "kleines Latinum",
     "int.handball": "Handball",
     "int.kite": "Kitesurfen",
+    "int.padel": "Padel",
     "int.dance": "Paartanz",
     "vol1.org": "Fußballschiedsrichter",
     "vol2.org": "Netzwerkteam, Stormarnschule Ahrensburg",
