@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Herrmann — Lebenslauf</title>
+<meta name="description" content="Lebenslauf von Felix Herrmann, dualer Student Wirtschaftsinformatik (Schwerpunkt Software Engineering) bei der OTTO GmbH & Co KG.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f5f7;
+    --card-bg: #ffffff;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --border: #e5e5e7;
+    --accent: #0071e3;
+    --accent-soft: rgba(0, 113, 227, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d0f;
+      --card-bg: #1c1c1e;
+      --text: #f5f5f7;
+      --muted: #9a9a9e;
+      --border: #2e2e30;
+      --accent: #4da3ff;
+      --accent-soft: rgba(77, 163, 255, 0.12);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  /* Hero */
+  header.hero {
+    margin-bottom: 3rem;
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .role {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .contact-row a, .contact-row span {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    background: var(--card-bg);
+  }
+  .contact-row a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 2.75rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Timeline entries */
+  .entry {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 0.25rem 1.25rem;
+    padding: 1rem 0;
+  }
+  .entry + .entry {
+    border-top: 1px solid var(--border);
+  }
+  .entry .when {
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  .entry .what .org {
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+  }
+  .entry .what .title {
+    color: var(--text);
+    margin: 0 0 0.3rem;
+  }
+  .entry .what .note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  @media (max-width: 560px) {
+    .entry { grid-template-columns: 1fr; gap: 0.2rem; }
+    .entry .when { padding-top: 0; }
+  }
+
+  /* Skills */
+  .skill-groups {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .skill-group .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .pill {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+
+  /* Grid sections (Sprachen / Interessen) */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 560px) {
+    .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  ul.plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.plain li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  ul.plain li:first-child {
+    border-top: none;
+  }
+  ul.plain li span.level {
+    color: var(--muted);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 3rem;
+  }
+  footer a {
+    color: var(--muted);
+  }
+
+  @media print {
+    body { background: #fff; }
+    .contact-row a { border-color: #ccc; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Lebenslauf</p>
+    <h1>Felix Herrmann</h1>
+    <p class="role">Dualer Student Wirtschaftsinformatik (Software Engineering) bei OTTO — auf dem Weg zum Software Engineer</p>
+    <div class="contact-row">
+      <a href="mailto:herrmann.felix@aol.com">herrmann.felix@aol.com</a>
+      <span>Hamburg</span>
+      <a href="https://fherrmann.com">fherrmann.com</a>
+    </div>
+  </header>
+
+  <section id="profil">
+    <h2>Profil</h2>
+    <p style="margin:0; color: var(--text);">
+      Ich bin im letzten Lehrjahr meines dualen Studiums Wirtschaftsinformatik mit
+      Schwerpunkt Software Engineering bei der OTTO GmbH &amp; Co KG und strebe dort
+      den Einstieg als Software Engineer an. Aktueller Notendurchschnitt an der
+      Nordakademie: 1,3. Neben dem Studium baue und betreibe ich eigene Web-Projekte
+      und Server-Infrastruktur — von kleinen Tools bis zu selbst gehosteten Diensten.
+    </p>
+  </section>
+
+  <section id="werdegang">
+    <h2>Beruflicher Werdegang</h2>
+
+    <div class="entry">
+      <div class="when">seit 08/2023</div>
+      <div class="what">
+        <p class="org">OTTO GmbH &amp; Co KG, Hamburg <span class="badge">aktuell</span></p>
+        <p class="title">Dualer Student Wirtschaftsinformatik — Schwerpunkt Software Engineering</p>
+        <p class="note">Letztes Lehrjahr, Ziel: Übernahme als Software Engineer</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">07/2020 – 04/2021</div>
+      <div class="what">
+        <p class="org">Acer Computer GmbH, Ahrensburg</p>
+        <p class="title">Werkstudent, Callcenter Agent</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">01/2018 – 02/2018</div>
+      <div class="what">
+        <p class="org">Claus Nitsche &amp; Sohn GmbH, Hamburg</p>
+        <p class="title">Wirtschaftspraktikum als Kaufmann</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bildung">
+    <h2>Bildungsweg</h2>
+
+    <div class="entry">
+      <div class="when">seit 10/2023</div>
+      <div class="what">
+        <p class="org">Nordakademie — Hochschule der Wirtschaft</p>
+        <p class="title">B.Sc. Wirtschaftsinformatik, duales Studium</p>
+        <p class="note">Aktueller Notendurchschnitt: 1,3</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">10/2020 – 09/2023</div>
+      <div class="what">
+        <p class="org">MSH Medical School Hamburg</p>
+        <p class="title">B.Sc. Psychologie (Note 1,8)</p>
+        <p class="note">Wissenschaftlich-methodischer Schwerpunkt</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">08/2011 – 06/2020</div>
+      <div class="what">
+        <p class="org">Gymnasium Stormarnschule Ahrensburg</p>
+        <p class="title">Abitur (Note 1,8)</p>
+        <p class="note">Profilfach Physik · Leistungskurse Physik, Mathe, Deutsch, Englisch</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kenntnisse">
+    <h2>Kenntnisse</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <p class="label">IT</p>
+        <div class="pills">
+          <span class="pill">Java</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Rust</span>
+          <span class="pill">MS 365</span>
+          <span class="pill">IBM SPSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sprachen-interessen">
+    <div class="two-col">
+      <div>
+        <h2>Sprachen</h2>
+        <ul class="plain">
+          <li>Deutsch <span class="level">Muttersprache</span></li>
+          <li>Englisch <span class="level">fließend</span></li>
+          <li>Latein <span class="level">kleines Latinum</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Interessen</h2>
+        <ul class="plain">
+          <li>Handball <span class="level">seit 2012</span></li>
+          <li>Kitesurfen <span class="level">seit 2014</span></li>
+          <li>Paartanz <span class="level">seit 2016</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="ehrenamt">
+    <h2>Ehrenamt</h2>
+
+    <div class="entry">
+      <div class="when">seit 08/2018</div>
+      <div class="what">
+        <p class="org">Fußballschiedsrichter</p>
+        <p class="title">Kreis Hamburg-Walddörfer</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">08/2016 – 08/2019</div>
+      <div class="what">
+        <p class="org">Netzwerkteam, Stormarnschule Ahrensburg</p>
+        <p class="title">Serveradministration &amp; Betreuung des schulischen Intranets (IServ)</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when">09/2021</div>
+      <div class="what">
+        <p class="org">Bundestagswahl</p>
+        <p class="title">Stellvertretender Wahlvorstand</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Felix Herrmann · <a href="https://fherrmann.com">fherrmann.com</a>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
