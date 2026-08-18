@@ -62,7 +62,7 @@
     position: fixed;
     top: 20px;
     left: 20px;
-    display: inline-flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 40px;
@@ -81,6 +81,9 @@
     border-color: var(--accent);
     color: var(--accent);
     transform: translateX(-2px);
+  }
+  .back-link.visible {
+    display: inline-flex;
   }
 
   /* Topbar */
@@ -305,7 +308,16 @@
 </head>
 <body>
 
-<a class="back-link" href="https://fherrmann.com" aria-label="Zurück zu fherrmann.com">&larr;</a>
+<a class="back-link" id="back-link" href="https://fherrmann.com" aria-label="Zurück zu fherrmann.com">&larr;</a>
+<script>
+  (function () {
+    try {
+      if (new URL(document.referrer).hostname === 'fherrmann.com') {
+        document.getElementById('back-link').classList.add('visible');
+      }
+    } catch (e) {}
+  })();
+</script>
 
 <div class="topbar">
   <span class="brand">felix-herrmann/cv</span>
